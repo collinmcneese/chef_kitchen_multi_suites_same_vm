@@ -1,6 +1,6 @@
-# kitchen_multi_vms CHANGELOG
+# kitchen_multi_suites_same_vm CHANGELOG
 
-This file is used to list changes made in each version of the kitchen_multi_vms cookbook.
+This file is used to list changes made in each version of the kitchen_multi_suites_same_vm cookbook.
 
 ## 0.1.0
 

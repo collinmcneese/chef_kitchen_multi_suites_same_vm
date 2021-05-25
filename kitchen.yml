@@ -1,37 +1,64 @@
 ---
 driver:
-  name: dokken
-  privileged: true  # allows systemd services to start
+  name: vagrant
 
 provisioner:
-  name: dokken
-
-transport:
-  name: dokken
+  name: chef_zero
 
 verifier:
   name: inspec
 
 platforms:
-  # @see https://github.com/chef-cookbooks/testing_examples/blob/master/kitchen.dokken.yml
-  # @see https://hub.docker.com/u/dokken
-  - name: ubuntu-20.04
-    driver:
-      image: dokken/ubuntu-20.04
-      pid_one_command: /bin/systemd
-      intermediate_instructions:
-        - RUN /usr/bin/apt-get update
-
   - name: centos-8
     driver:
-      image: dokken/centos-8
-      pid_one_command: /usr/lib/systemd/systemd
+      image: bento/centos-8
 
 suites:
-  - name: default
-    run_list:
-      - recipe[kitchen_multi_vms::default]
+  - name: install
     verifier:
       inspec_tests:
-        - test/integration/default
+        - test/integration/default/install_test.rb
     attributes:
+      kitchen_multi_suites_same_vm:
+        action: install
+# Only populate additional suites once install suite is created
+<% if File.exist?('.kitchen/install-centos-8.yml') %>
+  - name: reconfigure
+    verifier:
+      host: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['hostname'] %>
+      port: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['port'] %>
+      user: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['username'] %>
+      key_files: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['ssh_key'] %>
+      inspec_tests:
+        - test/integration/default/reconfigure_test.rb
+    attributes:
+      kitchen_multi_suites_same_vm:
+        action: reconfigure
+    driver:
+      name: dummy
+    transport:
+      name: ssh
+      host: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['hostname'] %>
+      port: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['port'] %>
+      username: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['username'] %>
+      ssh_key: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['ssh_key'] %>
+  - name: uninstall
+    verifier:
+      host: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['hostname'] %>
+      port: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['port'] %>
+      user: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['username'] %>
+      key_files: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['ssh_key'] %>
+      inspec_tests:
+        - test/integration/default/uninstall_test.rb
+    attributes:
+      kitchen_multi_suites_same_vm:
+        action: uninstall
+    driver:
+      name: dummy
+    transport:
+      name: ssh
+      host: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['hostname'] %>
+      port: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['port'] %>
+      username: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['username'] %>
+      ssh_key: <%= ::YAML.load(::File.read('.kitchen/install-centos-8.yml'))['ssh_key'] %>
+<% end %>

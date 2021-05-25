@@ -1,8 +1,8 @@
-name 'kitchen_multi_vms'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
-license 'All Rights Reserved'
-description 'Installs/Configures kitchen_multi_vms'
+name 'kitchen_multi_suites_same_vm'
+maintainer 'Collin McNeese'
+maintainer_email 'cmcneese@chef.io'
+license 'Apache-2.0'
+description 'Installs/Configures kitchen_multi_suites_same_vm'
 version '0.1.0'
 chef_version '>= 15.0'
 
@@ -10,10 +10,10 @@ chef_version '>= 15.0'
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
 # uploaded to a Supermarket.
 #
-# issues_url 'https://github.com/<insert_org_here>/kitchen_multi_vms/issues'
+# issues_url 'https://github.com/<insert_org_here>/kitchen_multi_suites_same_vm/issues'
 
 # The `source_url` points to the development repository for this cookbook.  A
 # `View Source` link will be displayed on this cookbook's page when uploaded to
 # a Supermarket.
 #
-# source_url 'https://github.com/<insert_org_here>/kitchen_multi_vms'
+# source_url 'https://github.com/<insert_org_here>/kitchen_multi_suites_same_vm'
