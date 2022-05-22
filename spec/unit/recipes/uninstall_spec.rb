@@ -2,7 +2,7 @@
 # Cookbook:: kitchen_multi_suites_same_vm
 # Spec:: uninstall
 #
-# Copyright:: 2021, Collin McNeese, Apache-2.0
+
 
 require 'spec_helper'
 

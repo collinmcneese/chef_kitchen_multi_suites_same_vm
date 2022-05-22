@@ -45,7 +45,7 @@ $ kitchen create
        ==> default: Checking for guest additions in VM...
        ==> default: Setting hostname...
        ==> default: Mounting shared folders...
-           default: /tmp/omnibus/cache => /Users/cmcneese/.kitchen/cache
+           default: /tmp/omnibus/cache => /Users/myuser/.kitchen/cache
        ==> default: Machine not provisioned because `--no-provision` is specified.
        [SSH] Established
        Vagrant instance <install-centos-8> created.
@@ -70,7 +70,7 @@ $ kitchen verify
 -----> Starting Test Kitchen (v2.11.2)
 -----> Converging <install-centos-8>...
        Preparing files for transfer
-       Installing cookbooks for Policyfile /Users/cmcneese/dev/tmp/kitchen_multi_suites_same_vm/Policyfile.rb using `/usr/local/bin/chef-cli install`
+       Installing cookbooks for Policyfile /Users/myuser/dev/tmp/kitchen_multi_suites_same_vm/Policyfile.rb using `/usr/local/bin/chef-cli install`
        Installing cookbooks from lock
        Installing kitchen_multi_suites_same_vm 0.1.0
        Preparing dna.json
@@ -148,9 +148,9 @@ $ kitchen verify
 -----> Setting up <install-centos-8>...
        Finished setting up <install-centos-8> (0m0.00s).
 -----> Verifying <install-centos-8>...
-       Loaded tests from {:path=>".Users.cmcneese.dev.tmp.kitchen_multi_suites_same_vm.test.integration.default.install_test.rb"}
+       Loaded tests from {:path=>".Users.myuser.dev.tmp.kitchen_multi_suites_same_vm.test.integration.default.install_test.rb"}
 
-Profile: tests from {:path=>"/Users/cmcneese/dev/tmp/kitchen_multi_suites_same_vm/test/integration/default/install_test.rb"} (tests from {:path=>".Users.cmcneese.dev.tmp.kitchen_multi_suites_same_vm.test.integration.default.install_test.rb"})
+Profile: tests from {:path=>"/Users/myuser/dev/tmp/kitchen_multi_suites_same_vm/test/integration/default/install_test.rb"} (tests from {:path=>".Users.myuser.dev.tmp.kitchen_multi_suites_same_vm.test.integration.default.install_test.rb"})
 Version: (not specified)
 Target:  ssh://vagrant@127.0.0.1:2200
 
@@ -164,7 +164,7 @@ Test Summary: 1 successful, 0 failures, 0 skipped
        Finished creating <reconfigure-centos-8> (0m0.00s).
 -----> Converging <reconfigure-centos-8>...
        Preparing files for transfer
-       Installing cookbooks for Policyfile /Users/cmcneese/dev/tmp/kitchen_multi_suites_same_vm/Policyfile.rb using `/usr/local/bin/chef-cli install`
+       Installing cookbooks for Policyfile /Users/myuser/dev/tmp/kitchen_multi_suites_same_vm/Policyfile.rb using `/usr/local/bin/chef-cli install`
        Installing cookbooks from lock
        Installing kitchen_multi_suites_same_vm 0.1.0
        Preparing dna.json
@@ -206,9 +206,9 @@ Test Summary: 1 successful, 0 failures, 0 skipped
 -----> Setting up <reconfigure-centos-8>...
        Finished setting up <reconfigure-centos-8> (0m0.00s).
 -----> Verifying <reconfigure-centos-8>...
-       Loaded tests from {:path=>".Users.cmcneese.dev.tmp.kitchen_multi_suites_same_vm.test.integration.default.reconfigure_test.rb"}
+       Loaded tests from {:path=>".Users.myuser.dev.tmp.kitchen_multi_suites_same_vm.test.integration.default.reconfigure_test.rb"}
 
-Profile: tests from {:path=>"/Users/cmcneese/dev/tmp/kitchen_multi_suites_same_vm/test/integration/default/reconfigure_test.rb"} (tests from {:path=>".Users.cmcneese.dev.tmp.kitchen_multi_suites_same_vm.test.integration.default.reconfigure_test.rb"})
+Profile: tests from {:path=>"/Users/myuser/dev/tmp/kitchen_multi_suites_same_vm/test/integration/default/reconfigure_test.rb"} (tests from {:path=>".Users.myuser.dev.tmp.kitchen_multi_suites_same_vm.test.integration.default.reconfigure_test.rb"})
 Version: (not specified)
 Target:  ssh://vagrant@127.0.0.1:2200
 
@@ -224,7 +224,7 @@ Test Summary: 2 successful, 0 failures, 0 skipped
        Finished creating <uninstall-centos-8> (0m0.00s).
 -----> Converging <uninstall-centos-8>...
        Preparing files for transfer
-       Installing cookbooks for Policyfile /Users/cmcneese/dev/tmp/kitchen_multi_suites_same_vm/Policyfile.rb using `/usr/local/bin/chef-cli install`
+       Installing cookbooks for Policyfile /Users/myuser/dev/tmp/kitchen_multi_suites_same_vm/Policyfile.rb using `/usr/local/bin/chef-cli install`
        Installing cookbooks from lock
        Installing kitchen_multi_suites_same_vm 0.1.0
        Preparing dna.json
@@ -266,9 +266,9 @@ Test Summary: 2 successful, 0 failures, 0 skipped
 -----> Setting up <uninstall-centos-8>...
        Finished setting up <uninstall-centos-8> (0m0.00s).
 -----> Verifying <uninstall-centos-8>...
-       Loaded tests from {:path=>".Users.cmcneese.dev.tmp.kitchen_multi_suites_same_vm.test.integration.default.uninstall_test.rb"}
+       Loaded tests from {:path=>".Users.myuser.dev.tmp.kitchen_multi_suites_same_vm.test.integration.default.uninstall_test.rb"}
 
-Profile: tests from {:path=>"/Users/cmcneese/dev/tmp/kitchen_multi_suites_same_vm/test/integration/default/uninstall_test.rb"} (tests from {:path=>".Users.cmcneese.dev.tmp.kitchen_multi_suites_same_vm.test.integration.default.uninstall_test.rb"})
+Profile: tests from {:path=>"/Users/myuser/dev/tmp/kitchen_multi_suites_same_vm/test/integration/default/uninstall_test.rb"} (tests from {:path=>".Users.myuser.dev.tmp.kitchen_multi_suites_same_vm.test.integration.default.uninstall_test.rb"})
 Version: (not specified)
 Target:  ssh://vagrant@127.0.0.1:2200
 
